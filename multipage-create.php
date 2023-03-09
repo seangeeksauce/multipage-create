@@ -10,7 +10,6 @@
  * License: GPL2
  */
 class Multipagecreate {
-
     static $hidden_field_name = 'multipage_hidden_field';
     static $array_field_name = 'multipage_array';
     static $table_header_array = array('Page Name', 'Page URL');
@@ -21,8 +20,6 @@ class Multipagecreate {
     public static $error_array = array();
     private static $valid_submission = false;
     private static $validated = false;
-    
-    
 
     public static function Init() {
         add_action('admin_menu', array(self::class, 'multipage_plugin_menu'));
@@ -36,7 +33,6 @@ class Multipagecreate {
         if (!current_user_can('manage_options')) {
             wp_die(__('Sorry! You dont have the correct user access rights to use this plugin!'));
         }
-
 
         // Setup data
         self::controls();
@@ -62,10 +58,6 @@ class Multipagecreate {
 
                 // setup creation info and sets validation property for insert
                 self::set_creation_info();
-
-
-            
-
             else:
                 self::$match_msg = "No commas in string..... Please use commas to seperate your values.";
 
@@ -151,8 +143,6 @@ class Multipagecreate {
             }
         endif;
     }
- 
-  
     
     private static function view_updated_msg() {
 
